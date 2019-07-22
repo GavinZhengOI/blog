@@ -52,21 +52,30 @@ bool nroot(int x){
 }
 void rotate(int x){
     int y=f[x],z=f[y],k=(c[y][1]==x),w=c[x][!k];
-    if(nroot(y))c[z][c[z][1]==y]=x;c[x][!k]=y;c[y][k]=w;
-    if(w)f[w]=y;f[y]=x;f[x]=z;
+    bool flag=nroot(y);
+
+
+
+    c[y][k]=c[x][!k];
+    f[c[x][!k]]=y;
+
+    c[x][!k]=y;
+    f[y]=x;
+
+    if(flag)c[z][c[z][1]==y]=x;
+    f[x]=z;
     pushup(y);
+    pushup(x);
 }
 void splay(int x){
     int y=x,z=0;
     st[++z]=y;
     while(nroot(y))st[++z]=y=f[y];
     while(z)pushdown(st[z--]);
-    while(nroot(x)){
-        y=f[x];z=f[y];
-        if(nroot(y)){
-            rotate((c[y][0]==x)^(c[z][0]==y)?x:y);
-        }
-        rotate(x);
+    for(;nroot(x);rotate(x)){
+        y=f[x];
+        if(!nroot(f[x]))continue;
+        rotate((c[f[x]][0]==x)==(c[f[y]][0]==y)?y:x);
     }
     pushup(x);
 }
@@ -91,8 +100,8 @@ void split(int x,int y){
     makeroot(x);access(y);splay(y);
 }
 void link(int x,int y){
-    makeroot(x);
-    if(findroot(y)!=x)f[x]=y;
+
+    if(findroot(x)!=findroot(y)){makeroot(x);f[x]=y;}
 }
 void cut(int x,int y){
     makeroot(x);
