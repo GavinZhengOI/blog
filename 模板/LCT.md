@@ -77,7 +77,7 @@ void splay(int x){
         if(!nroot(f[x]))continue;
         rotate((c[f[x]][0]==x)==(c[f[y]][0]==y)?y:x);
     }
-    pushup(x);
+  //  pushup(x);
 }
 void access(int x){
     for(int y=0;x;y=x,x=f[x]){
