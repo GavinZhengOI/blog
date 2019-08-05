@@ -17,3 +17,5 @@
 ![image-20190805223918246](/Users/gavinzheng/Documents/GitHub/blog/模板/pic/语法小trick-4.png)
 
 ![image-20190805223939777](/Users/gavinzheng/Documents/GitHub/blog/模板/pic/语法小trick-5.png)
+
+注意，这里的```A[i]=gg(3,3,3)```的“gg”不能打括号，否则就是强制转换了。
