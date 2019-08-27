@@ -135,4 +135,4 @@ int main() {
 
 另外，记录一下本题的小故事：
 
-![Screenshot_2019-08-28-07-00-51-163_com.tencent.ti](/Users/gavinzheng/Documents/GitHub/blog/题解/Codeforces/pic/CF1207G Indie Album-1.png)
+![IMG_20190828_071125](pic/CF1207G Indie Album-1.png)
