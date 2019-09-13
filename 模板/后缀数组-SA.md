@@ -24,5 +24,5 @@ $buc[i]$放在前$i$个桶里(前$i$名)的元素个数
 
 贴个wkr大佬的代码：
 
-![后缀数组-1](/Users/gavinzheng/Documents/GitHub/blog/模板/pic/后缀数组-1.png)
+![后缀数组-1](pic/后缀数组-1.png)
 
