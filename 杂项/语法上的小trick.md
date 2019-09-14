@@ -6,16 +6,17 @@
 
 提供三种写法：
 
-![BD22F2CA4C81F771B383032501549317](/Users/gavinzheng/Documents/GitHub/blog/模板/pic/语法小trick-1.jpg)
+![BD22F2CA4C81F771B383032501549317](pic/语法小trick-1.jpg)
 
-![9E5211A4D8A89E6E34087B69DB0053EA](/Users/gavinzheng/Documents/GitHub/blog/模板/pic/语法小trick-2.png)
+![9E5211A4D8A89E6E34087B69DB0053EA](pic/语法小trick-2.png)
 
-![DD79F33CA36393FB3C3B881AB7FF5759](/Users/gavinzheng/Documents/GitHub/blog/模板/pic/语法小trick-3.png)
+![DD79F33CA36393FB3C3B881AB7FF5759](pic/语法小trick-3.png)
 
 ​	使用的时候只用：
 
-![image-20190805223918246](/Users/gavinzheng/Documents/GitHub/blog/模板/pic/语法小trick-4.png)
+![image-20190805223918246](pic/语法小trick-4.png)
 
-![image-20190805223939777](/Users/gavinzheng/Documents/GitHub/blog/模板/pic/语法小trick-5.png)
+![image-20190805223939777](pic/语法小trick-5.png)
 
 注意，这里的```A[i]=gg(3,3,3)```的“gg”不能打括号，否则就是强制转换了。
+
