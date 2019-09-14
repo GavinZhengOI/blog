@@ -20,3 +20,19 @@
 
 注意，这里的```A[i]=gg(3,3,3)```的“gg”不能打括号，否则就是强制转换了。
 
+## 快速读入
+
+```cpp
+inline char nc(){
+    static char buf[100000],*p1=buf,*p2=buf;
+    return p1==p2&&(p2=(p1=buf)+fread(buf,1,100000,stdin),p1==p2)?EOF:*p1++;
+}
+inline int _read(){
+    char ch=nc();int sum=0;
+    while(!(ch>='0'&&ch<='9'))ch=nc();
+    while(ch>='0'&&ch<='9')sum=sum*10+ch-48,ch=nc();
+    return sum;
+}
+```
+
+`_read()`函数返回的就是读入信息。
