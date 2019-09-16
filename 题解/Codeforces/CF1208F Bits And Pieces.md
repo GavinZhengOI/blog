@@ -2,4 +2,16 @@
 
 [传送门](https://codeforces.com/contest/1208/problem/F)
 
+## 思路
+
 这里要运用SOS-DP的思路（$\text{Sum over Subsets}$）。我在另外一篇博客里介绍过，如有需要可以搜索一下我的博客。
+
+SOS-DP是记录每个$mask$所有子集的信息，而这道题只需要记录每个$mask$所有超集的信息即可。$dp[mask]$记录的是能满足$mask$是其的子集的所有数中坐标最大的两个。我们枚举$a_i$，然后贪心的按位取就可以了。具体细节可以看代码。
+
+## 代码
+
+（待补充）
+
+## 参考资料
+
+[CodeForces -1208F Bits And Pieces](https://blog.csdn.net/Ratina/article/details/100100711)
