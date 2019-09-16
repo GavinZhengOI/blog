@@ -2,7 +2,7 @@
 
 ## 正文
 
-SOS-DP是用来解决这样的问题的：
+SOS-DP（$\text{Sum over Subsets}$）是用来解决这样的问题的：
 
 ![1568467195904](pic/SOS DP-1.png)
 
@@ -18,7 +18,18 @@ SOS-DP是用来解决这样的问题的：
 
 形象一些解释就是每次我们求解一个状态时，我们只从他的所有子集里和他只差一位的状态转移过来。（众所周知，如果$A\subseteq B,B\subseteq C$那么$A\subseteq$ C）。
 
-所以显然，复杂度$n\log_2 n$。
+放一段代码：
+
+```cpp
+for(int i = 0; i<(1<<N); ++i)
+	F[i] = A[i];
+for(int i = 0;i < N; ++i) for(int mask = 0; mask < (1<<N); ++mask){
+	if(mask & (1<<i))
+		F[mask] += F[mask^(1<<i)];
+}
+```
+
+所以显然，复杂度$N\space 2^N$。如果令值域为$M$，那么复杂度就是$M\log_2M$。
 
 ## 例题
 
