@@ -36,3 +36,21 @@ inline int _read(){
 ```
 
 `_read()`函数返回的就是读入信息。
+
+## 迭代器
+
+对于一个迭代器`it`，那么它代表了一个内存位置，我们可以用`*it`得到它代表的值。
+
+对于一些STL，我们可以遍历其中元素。以`set`为例：
+
+```cpp
+int a[] = {1,2,3};
+set<int> s;
+set<int>::iterator it;
+s.insert(a,a+3);
+for(it=s.begin();it!= s.end() ; ++it)cout<<*it<<" ";
+```
+
+## 参考资料
+
+[C++中set用法详解](https://blog.csdn.net/yas12345678/article/details/52601454)
