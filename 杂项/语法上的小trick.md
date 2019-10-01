@@ -51,6 +51,17 @@ s.insert(a,a+3);
 for(it=s.begin();it!= s.end() ; ++it)cout<<*it<<" ";
 ```
 
+## 重载运算符
+
+```cpp
+inline matrix operator + (matrix &a, matrix &b) {//传参直接传指针，不需要拷贝，跑的更快。
+    static matrix res;//static创建了一个只能在此函数内使用的全局变量，使每次调用函数不用都开空间，节省时间。
+    rep(i) rep(j) res.array[i][j] = inc(a.array[i][j], b.array[i][j]);
+    return res;
+}
+```
+
 ## 参考资料
 
 [C++中set用法详解](https://blog.csdn.net/yas12345678/article/details/52601454)
+
