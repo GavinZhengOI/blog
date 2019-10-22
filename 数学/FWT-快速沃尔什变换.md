@@ -67,7 +67,7 @@ FWT(A)[i]=\sum_{j|i=i}A_j
 $$
 正向运算：
 $$
-FWT(A)=\begin{cases}(FWT(A_0),FWT(A_0)+FWT(A_1))& n>1\\\ A & n=0\end{cases}
+FWT(A)=\begin{cases}(FWT(A_0),FWT(A_1)+FWT(A_0))& n>1\\\ A & n=0\end{cases}
 $$
 逆向运算：
 $$
@@ -110,9 +110,9 @@ $$
 
 ## 板子
 
-1. 按位与
-2. 按位异或
-3. 按位或
+1. 按位或
+2. 按位与
+3. 按位异或
 
 ```cpp
 //by Harry_bh
