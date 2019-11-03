@@ -12,7 +12,7 @@ Tarjan爷爷发明了很多图论算法，这些图论算法有很多相似之�
 
 **分量**：把一个向量分解成几个方向的向量的和，那些方向上的向量就叫做该向量（未分解前的向量）的分量。
 
-**强连通分量(strongly connected components)**：在一个有向图G中，有一个子图，这个子图每2个点都满足强连通，我们就叫这个子图叫做强连通分量。
+**强连通分量(strongly connected components/SCC)**：在一个有向图G中，有一个子图，这个子图每2个点都满足强连通，我们就叫这个子图叫做强连通分量。
 
 ![1022747-20160916163652617-1655492702](pic/Tarjan爷爷的两种图论算法-1.png)
 
@@ -26,7 +26,32 @@ Tarjan爷爷发明了很多图论算法，这些图论算法有很多相似之�
 
 ## Tarjan算法求割点/割边
 
+
+
+
+
 ## Tarjan算法求强连通分量
+
+```cpp
+stack<int> tp;
+void dfs(int u)
+{
+    dfn[u]=low[u]=++cnt1;//初始化每个未访问过的节点
+    tp.push(u);
+    for(int i=head[u];i;i=side[i].next)
+    {
+        int v=side[i].v;
+        if(!dfn[v])dfs(v),low[u]=min(low[u],low[v]);
+        else if(!scc[v])low[u]=min(low[u],dfn[v]);//被访问过却没有SCC编号（在栈里），证明在同一个强连通分量。因为栈维护的是一条有一个节点到它儿子的路径。所以如果栈顶的点u到栈中任意一点v有边。就证明存在u到v的一个环。
+    }
+    if(dfn[u]==low[u])//如果这个点是它所在强连通分量中dfn最小的，则有它来承担输出整个SCC的任务
+    {
+        int s=tp.top(),id=++cnt2;tp.pop();
+        scc[s]=id;
+        while(s!=u)s=tp.top(),tp.pop(),scc[s]=id;
+    }
+}
+```
 
 ## 参考资料
 
