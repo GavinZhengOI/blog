@@ -84,6 +84,8 @@ void output(){
 
 ## Tarjan算法求强连通分量（针对有向图）
 
+需要注意的一点是，因为从一个点开始不一定能保证所有点都走得到，所以需要对每个没有$dfn$的点跑一遍$tarjan$。
+
 ```cpp
 stack<int> tp;
 void dfs(int u)
