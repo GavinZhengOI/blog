@@ -156,5 +156,5 @@ int main(){
 ## 易错点
 
 - 调用`access(x)`后，`x`所在splay的根可能不是`x`，也可能不是原树的根。所以在查询某条路径$u,v$的答案时，一定需要在`makeroot(x),access(y)`之后必须加上`splay(x)`或`splay(y)`，才能保证x或y在splay的根上。
-
 - `findroot`时应该先`pushdown`再判断左儿子是不是0，然后才能向左儿子走（因为可能左儿子原来不是0，`pushdown`之后变成了0，这时候走左儿子就会炸掉）。所以应该写成：`while(c[x][0])x=c[x][0],push_down(x);`
+- `cut`中判断条件合法会进行`findroot(y)`，但是`findroot(y)`末尾如果没有对查询结果执行`splay()`就会锅掉。因为`cut`中会先`makeroot(x)`，`findroot(y)`如果查询之后不把结果`splay`上去那么根就不是`x`了，接着`cut`就会出锅。
